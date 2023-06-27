@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "lm-component-library": {
+      "projectType": "library",
+      "root": "projects/lm-component-library",
+      "sourceRoot": "projects/lm-component-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/lm-component-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lm-component-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lm-component-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lm-component-library/src/test.ts",
+            "tsConfig": "projects/lm-component-library/tsconfig.spec.json",
+            "karmaConfig": "projects/lm-component-library/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "lm-component-library"
+}

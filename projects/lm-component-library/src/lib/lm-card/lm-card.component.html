@@ -1,0 +1,11 @@
+<div class="lm-card">
+    <div class="lm-card-title" >
+            <p >{{cardTitle}}</p>
+    </div >
+        <div class="lm-card-content" >
+            <div  *ngIf="imageUrl" class="lm-card-image-container">
+                <img [src]="imageUrl" alt="image">
+            </div>
+        <div >{{cardContent}}</div>
+    </div>
+</div>
